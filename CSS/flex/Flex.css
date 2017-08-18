@@ -1,0 +1,29 @@
+
+body {
+	text-align: center;  /*文本居中*/
+}
+.header, .buttom{
+	background-color:#ccc;
+	height:30px;
+	line-height: 30px;
+}
+.content{
+	display: flex;
+}
+.left, .center, .right {
+	height: 100px;
+	line-height: 100px;
+}
+.left, .right {
+	width: 200px;
+}
+.left{
+	background-color: #f00;
+}
+.center{
+	background-color: #0f0;
+	flex-grow: 1;
+}
+.right{
+	background-color: #00f;
+}
