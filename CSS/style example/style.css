@@ -1,8 +1,10 @@
 .family-hei{
 	font-family: tahoma,arial,"STXihei",SimHei,"Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
+	font-size: 30px;
 }
 .family-wei{
 	font-family: tahoma,arial,"STXihei","Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
+	font-size: 40px;
 }
 .family-song{
 	font-family: tahoma,arial,"宋体", SimSun;
@@ -31,8 +33,16 @@
 .height{
 	line-height: 1.5;
 	background-color: red;
+	color: white;
 }
 .height-size{
 	line-height: 30px;
 	background-color: green;
+	color: white;
+}
+a:hover{
+	background-color: yellow;
+	font-size: 40px;
+	border-radius: 100%;
+	text-decoration: none;
 }
