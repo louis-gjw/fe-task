@@ -1,0 +1,38 @@
+.family-hei{
+	font-family: tahoma,arial,"STXihei",SimHei,"Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
+}
+.family-wei{
+	font-family: tahoma,arial,"STXihei","Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
+}
+.family-song{
+	font-family: tahoma,arial,"宋体", SimSun;
+}
+.red{
+	color: #f00;
+}
+.green{
+	color: rgb(0,255,0);
+}
+.Transparency{
+	color: rgba(0,255,0,0.5);
+}
+.thin{
+	font-weight: 100; 
+}
+.normal{
+	font-weight: normal;
+}
+.strong{
+	font-weight: bold;
+}
+.italic{
+	font-style: italic;
+}
+.height{
+	line-height: 1.5;
+	background-color: red;
+}
+.height-size{
+	line-height: 30px;
+	background-color: green;
+}
