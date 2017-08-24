@@ -1,3 +1,8 @@
+.body{
+	background:url(http://pic.nipic.com/2008-03-13/2008313153724224_2.jpg) no-repeat;
+	background-size: contain;
+	background-attachment: local;
+}
 .family-hei{
 	font-family: tahoma,arial,"STXihei",SimHei,"Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体", SimSun;
 	font-size: 30px;
@@ -19,9 +24,12 @@
 	color: rgba(0,255,0,0.5);
 }
 .thin{
+	border:2px solid #f00;
 	font-weight: 100; 
 }
 .normal{
+	border:4px solid #0f0;
+	border-radius: 50%;
 	font-weight: normal;
 }
 .strong{
@@ -43,6 +51,35 @@
 a:hover{
 	background-color: yellow;
 	font-size: 40px;
-	border-radius: 100%;
+	border:2px;
+	border-radius: 50%;
 	text-decoration: none;
+}
+.text-one{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000;
+	margin-top: 10px;
+	padding: 10px;
+}
+.text-two{
+	border-width: 1px 5px;
+	border-style: dashed;
+	border-color: #000 #f00;
+	margin-top: 10px;
+	padding: 10px;
+}
+.text-three{
+	border-width: 1px 5px 10px;
+	border-style: double;
+	border-color: #000 #f00 #090;
+	margin-top: 10px;
+	padding: 10px;
+}
+.text-four{
+	border-width: 1px 5px 10px 15px;
+	border-style: dotted;
+	border-color: #000 #f00 #090 #0ff;
+	margin-top: 10px;
+	padding: 10px;
 }
