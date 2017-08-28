@@ -49,6 +49,9 @@ a{
 	text-decoration: none;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+a:hover{
+	border-color: #ea2e49;
+}
 .page{
 	position: relative;
 	z-index: 2;
