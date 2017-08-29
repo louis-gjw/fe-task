@@ -1,10 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>仿今日头条</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-  
+    <div class="page">
+        <div class="header">
+            <h1>今日头条
+            	<a href="###"><img src="file:///Users/apple/Library/Containers/com.tencent.xinWeChat/Data/Library/Application%20Support/com.tencent.xinWeChat/2.0b4.0.9/7a3f72a55cbdd8402ebd6b3c4803d1c0/Message/MessageTemp/c4362e91368dbca13b07480e23f8a5c8/Image/1991503990104_.pic.jpg" class="search"></a>
+            	<a href="###"><img src="file:///Users/apple/Library/Containers/com.tencent.xinWeChat/Data/Library/Application%20Support/com.tencent.xinWeChat/2.0b4.0.9/7a3f72a55cbdd8402ebd6b3c4803d1c0/Message/MessageTemp/c4362e91368dbca13b07480e23f8a5c8/Image/2031503990682_.pic.jpg" class="mail"></a>
+            </h1>
+            <div class="navs">
+                <div class="navs-short">
+                    <ul class="navs__items">
+                        <li class="navs__items-name navs__items-name--current"><a href="###">推荐</a></li>
+                        <li class="navs__items-name"><a href="###">视频</a></li>
+                        <li class="navs__items-name"><a href="###">热点</a></li>
+                        <li class="navs__items-name"><a href="###">社会</a></li>
+                        <li class="navs__items-name"><a href="###">娱乐</a></li>
+                        <li class="navs__items-name"><a href="###">军事</a></li>
+                        <li class="navs__items-name"><a href="###">视频</a></li>
+                        <li class="navs__items-name"><a href="###">热点</a></li>
+                        <li class="navs__items-name"><a href="###">社会</a></li>
+                        <li class="navs__items-name"><a href="###">娱乐</a></li>
+                        <li class="navs__items-name"><a href="###">军事</a></li>
+                    </ul>
+                </div>
+                <a href="###"><img src="file:///Users/apple/Library/Containers/com.tencent.xinWeChat/Data/Library/Application%20Support/com.tencent.xinWeChat/2.0b4.0.9/7a3f72a55cbdd8402ebd6b3c4803d1c0/Message/MessageTemp/c4362e91368dbca13b07480e23f8a5c8/Image/1981503989751_.pic.jpg" class="plus"></a>
+            </div>
+        </div>
+        <div class="news">
+            <ul class="news__content">
+                <li class="news__content-one">
+                    <div class="menu">
+                        <p>首部戏就演女一号，本该成为一线女星，却被经纪人坑成十八线！</p>
+                        <div class="news-img">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                        </div>
+                        <span class="footer">风车流年</span>
+                        <span class="footer">评论</span>
+                        <span class="footer">152</span>
+                        <span class="footer">1小时前</span>
+                    </div>
+                </li>
+                <li class="news__content-one">
+                    <div class="menu-two">
+                        <div class="news-body">
+                            <p>一群食人蚁需要食物，便把一个大活人瞬间拖进蚁巢穴吃了</p>
+                            <span class="footer">永远爱我</span>
+                            <span class="footer">评论</span>
+                            <span class="footer">74</span>
+                        </div>
+                        <div class="news-img">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                        </div>
+                    </div>
+                </li>
+                <li class="news__content-one	">
+                    <div class="menu-two">
+                        <div class="news-body">
+                            <p>紧急！这30多个传销组织“黑名单”曝光，别再被骗！</p>
+                            <span class="footer">永远爱我</span>
+                            <span class="footer">评论</span>
+                            <span class="footer">74</span>
+                        </div>
+                        <div class="news-img">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                        </div>
+                    </div>
+                </li>
+                <li class="news__content-one">
+                    <div class="menu">
+                        <p>一对中国夫妇在美失踪超一周&nbsp;警方推测已坠崖身亡</p>
+                        <div class="news-img">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                            <img src="http://pic38.nipic.com/20140222/13141444_190705666137_2.jpg">
+                        </div>
+                        <span class="footer">风车流年</span>
+                        <span class="footer">评论</span>
+                        <span class="footer">152</span>
+                        <span class="footer">1小时前</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    ;
+    (function(win) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var tid;
+
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            if (width > 540) { // 最大宽度
+                width = 540;
+            }
+            var rem = width / 6.4;
+            docEl.style.fontSize = rem + 'px';
+        }
+
+        win.addEventListener('resize', function() {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }
+        }, false);
+
+        refreshRem();
+
+    })(window);
+    </script>
 </body>
+
 </html>
