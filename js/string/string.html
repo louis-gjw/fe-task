@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">              //首字母改大写
+function firstLetterToUpperCase(str){
+  if(typeof str !== 'string') {       //如果不是字符串
+    str = str + ''     //转换成字符串
+  }
+  var firstLetter = str.substring(0,1)
+  var othersLetter = str.substring(1)
+  return firstLetter.toUpperCase() + othersLetter
+}
+  console.log(firstLetterToUpperCase('hello'));
+  console.log(firstLetterToUpperCase('world'));
+  console.log(firstLetterToUpperCase(1234));
+
+
+  function trim(str){                 //去字符串头尾空格
+    str = str.trim()
+    return str;
+  }
+  console.log(trim('  abc   '))
+  console.log(trim('  a bc   '))
+
+
+  function removeNum(str){          //删除字符串中所有的数字
+    str= str.split(/\d+/);
+    str= str.join("");
+    return str;
+  }
+  console.log(removeNum('a23b434c45'));
+  console.log(removeNum('343abd8c'));
+
+
+  function reverse(str){                //反转字符串
+    str = str.split("").reverse().join("");
+    return str;
+  }
+  console.log(reverse('abcd'))
+  console.log(reverse('a'))
+
+
+</script>
+</body>
+</html>
