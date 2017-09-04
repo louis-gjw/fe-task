@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <button class="click-me">点我</button>
+    <input type="text" class="input">
+    <div class="output"></div>
+    <button class="clear-btn">清空</button>
+    <script type="text/javascript">
+    var btn = document.querySelector('.click-me')
+    btn.addEventListener('click', function() {
+        alert('哈哈')
+    })
+    var input = document.querySelector('.input')
+    var output = document.querySelector('.output')
+    input.addEventListener('keyup', function() {
+        output.textContent = input.value;
+    })
+    var btn = document.querySelector('.clear-btn')
+    btn.addEventListener('click', function() {
+        input.value = ''；
+        output.textContent = '';
+    })
+    </script>
+</body>
+
+</html>

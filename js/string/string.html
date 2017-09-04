@@ -27,9 +27,13 @@ function firstLetterToUpperCase(str){
 
 
   function removeNum(str){          //删除字符串中所有的数字
-    str= str.split(/\d+/);
-    str= str.join("");
-    return str;
+    var res ='';
+    for( var i =0;i <str.length;i++) {
+      if(isNaN(str[i])) {
+        res = res + str[i];
+      }
+    }
+      return res;
   }
   console.log(removeNum('a23b434c45'));
   console.log(removeNum('343abd8c'));
