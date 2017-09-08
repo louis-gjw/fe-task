@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="todo">
+        <h1 class="todo__title">待办事宜</h1>
+        <ul>
+            <li class="todo__item">看海贼王</li>
+            <li class="todo__item todo__item--special">学习前端</li>
+            <li class="todo__item">总结</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/jquery@3.2.1"></script>
+    <script type="text/javascript">
+      function labelNum(){
+        var num = $('.todo *').length
+        return num;
+      }
+      console.log(labelNum());
+
+      $('.todo *').each(function(){
+         var name =$(this).prop("tagName");
+         var width =$(this).width();
+         var height =$(this).height();
+         console.log('标签名：' + name + ',宽：' + width + 'px, 高：' + height + 'px')
+      })
+
+
+      function content(){
+      var res = $('.todo__item[class*="-"]').text()
+      return res
+      }
+      console.log(content())
+
+      var $el =$('.todo *').filter(function(){
+        return $(this).prop('class').indexOf('-') !==-1
+      })
+      var text = $el.text()
+      console.log(text)
+
+      var $res
+      $('.todo *').each(function(){
+          if($(this).prop('class').indexOf('-') !==-1) {
+            $res = $(this)
+          }
+      })
+      console.log($res.text())
+
+      var arr = []
+      $('.todo .todo__item').each(function(i){
+        arr.push($(this).text())
+        arr[i] = $(this).text()
+      })
+      console.log(arr.join(';'))
+
+
+      var arr = []
+      $('.todo .todo__item').each(function(){
+        arr.push($(this).text())
+      })
+      console.log(arr.join(';'))
+
+      var arr = []
+      $('.todo .todo__item').each(function(i){
+        arr[i] = $(this).text()
+      })
+      console.log(arr.join(';'))
+
+    </script>
+</body>
+
+</html>

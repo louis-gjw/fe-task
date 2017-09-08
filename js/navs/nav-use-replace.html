@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <ul class="navs"></ul>
+    </div>
+    <script type="x/template" id="classify-template">
+        <li>
+            <h2>{name}</h2>
+            <ul>
+                {content}
+            </ul>
+        </li>
+    </script>
+    <script type="x/template" id="nav-template">
+        <li><a href="{href}">{text}</ a></li>
+    </script>
+    <script type="text/javascript">
+    var data = [
+      {
+            name: '软件使用',
+            list: [{
+                name: 'Chrome 开发者工具',
+                url: 'http://www.css88.com/doc/chrome-devtools/'
+            }, {
+                name: '如何优雅地使用Sublime Text',
+                url: 'http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/'
+            }]
+        },
+
+        
+        {
+            name: '文档导航',
+            list: [{
+                name: 'Markdown 参考',
+                url: 'http://warpedvisions.org/projects/markdown-cheat-sheet'
+            }]
+        }
+    ]
+
+    var navs = document.querySelector('.navs')
+    var res = ''
+    var classifyTemplate = document.querySelector('#classify-template').innerHTML
+    data.forEach(function(each) {
+        res = res + classifyTemplate
+            .replace('{name}', each.name)
+            .replace('{content}', makeList(each.list))
+    })
+
+    function makeList(list) {
+        var res = ''
+        list.forEach(function(item) {
+            res = res + makeItem(item.url, item.name)
+        })
+        return res
+    }
+
+    function makeItem(href, text) {
+        var itemTemplate = document.querySelector('#nav-template').innerHTML
+
+        return itemTemplate
+            .replace('{href}', href)
+            .replace('{text}', text)
+    }
+
+
+    navs.innerHTML = res
+    // `
+    // <ul>
+    //   <li>
+    //     <h2>软件使用</h2>
+    //     <ul>
+    //       <li><a href="http://www.css88.com/doc/chrome-devtools/">Chrome 开发者工具</a></li>
+    //       <li><a href="http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/">如何优雅地使用Sublime Text</a></li>
+    //     </ul>
+    //   </li>
+    //   <li>
+    //     <h2>文档导航</h2>
+    //     <ul>
+    //       <li><a href="http://warpedvisions.org/projects/markdown-cheat-sheet">Markdown 参考</a></li>
+    //     </ul>
+    //   </li>
+    // </ul>
+    // `
+    </script>
+</body>
+
+</html>

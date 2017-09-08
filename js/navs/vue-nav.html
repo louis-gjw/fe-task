@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="each in listData">
+                <h2>{{each.name}}</h2>
+                <ul>
+                    <li v-for="item in each.list"><a :href="item.url">{{item.name}}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+    <script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            listData: [{
+                    name: '软件使用',
+                    list: [{
+                        name: 'Chrome 开发者工具',
+                        url: 'http://www.css88.com/doc/chrome-devtools/'
+                    }, {
+                        name: '如何优雅地使用Sublime Text',
+                        url: 'http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/'
+                    }]
+                },
+                {
+                    name: '文档导航',
+                    list: [{
+                        name: 'Markdown 参考',
+                        url: 'http://warpedvisions.org/projects/markdown-cheat-sheet'
+                    }]
+                }]
+        }
+    })
+    </script>
+</body>
+
+</html>
