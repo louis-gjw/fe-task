@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <style>
+    .calculator{
+      width: 176px;
+      margin: 0 auto;
+    }
+    .output{
+      width: 100%;
+      text-align: right;
+    }
+    button{
+      width: 40px;
+      text-align: center;
+    }
+    .cal {
+      width: 100%;
+    }
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator" id="app" v-cloak>
+    <input type="text" class="output" v-model="result" readonly>
+    <div class="inputs">
+      <button class="num" @click="inputNum(1)">1</button>
+      <button class="num" @click="inputNum(2)">2</button>
+      <button class="num" @click="inputNum(3)">3</button>
+      <button class="op" @click="inputOp('+')">+</button>
+      <br>
+      <button class="num" @click="inputNum(4)">4</button>
+      <button class="num" @click="inputNum(5)">5</button>
+      <button class="num" @click="inputNum(6)">6</button>
+      <button class="op" @click="inputOp('-')">-</button>
+      <br>
+      <button class="num" @click="inputNum(7)">7</button>
+      <button class="num" @click="inputNum(8)">8</button>
+      <button class="num" @click="inputNum(9)">9</button>
+      <button class="op" @click="inputOp('*')">*</button>
+      <br>
+      <button class="num" @click="inputNum(0)">0</button>
+      <button class="num" @click="inputNum('.')">.</button>
+      <button class="op" @click="inputOp('/')">/</button>
+      <button class="c" @click="inputC">清零</button>
+      <br>
+      <button class="cal" @click="inputCal">=</button>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+
+  <script>
+    /*
+    满足以下情况
+    1. 输入数字 输入操作符 输入数字 输入等号
+    2. 输入数字 输入操作符 输入数字 输入等号 输入操作符
+    2. 输入数字 输入操作符 输入数字 输入等号 输入数字
+    2. 输入数字 输入操作符 输入数字 输入操作符 数字
+    2. 输入数字 输入操作符 输入数字 输入操作符 输入操作符
+    */ 
+    new Vue({
+      el:'#app',
+      data:{
+        result: '',
+        leftNum: '',
+        prevLeftNum: '',
+        rightNum: '',
+        op: null,
+        isLeft: true
+      },  
+      methods: {
+        inputNum:function(val){
+          if(this.isLeft) {
+            this.leftNum = this.leftNum + ('' + val)
+            this.result = this.leftNum
+          } else {
+            this.rightNum = this.rightNum + ('' + val)
+            this.result = this.rightNum
+          }
+        },
+        inputOp: function(op) {
+          if(this.leftNum === '') { // 按完等号，左操作数是 ’‘，但是做操作，一定要有左操作数
+            this.leftNum = this.prevLeftNum
+          }
+          if(this.leftNum !== '' && this.rightNum !== '') { // 处理：输入数字，然后操作符，然后，数字然后没按等号，又按 操作符的情况
+            this.leftNum = this.cal()
+            this.rightNum = ''
+            this.result = this.leftNum
+          } else {
+            this.result = ''
+          }
+          this.op = op
+          this.isLeft = false
+        },
+        inputC: function(){
+          this.result = ''
+          this.leftNum = ''
+          this.rightNum = ''
+          this.isLeft = true
+        },
+        inputCal: function(){
+          this.result = this.cal()
+          this.prevLeftNum = this.result
+          this.leftNum = ''
+          this.rightNum = ''
+          this.isLeft = true
+        },
+        cal: function() {
+          return eval(`${this.leftNum}${this.op}${this.rightNum}`)
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
